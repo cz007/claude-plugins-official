@@ -1,0 +1,19 @@
+test_approval_scope_and_content_gate (test_codex_adapter.Adapter.test_approval_scope_and_content_gate) ... ok
+test_checkpoint_keeps_previous_content (test_codex_adapter.Adapter.test_checkpoint_keeps_previous_content) ... ok
+test_existing_init_is_refused (test_codex_adapter.Adapter.test_existing_init_is_refused) ... ok
+test_external_unicode_source_without_link (test_codex_adapter.Adapter.test_external_unicode_source_without_link) ... ok
+test_junction_or_symlink_output_refused (test_codex_adapter.Adapter.test_junction_or_symlink_output_refused) ... ok
+test_missing_baseline_is_not_clean (test_codex_adapter.Adapter.test_missing_baseline_is_not_clean) ... ok
+test_output_traversal_refused (test_codex_adapter.Adapter.test_output_traversal_refused) ... ok
+test_source_containing_output_is_refused (test_codex_adapter.Adapter.test_source_containing_output_is_refused) ... ok
+test_source_hash_detects_same_timestamp_change_and_deletion (test_codex_adapter.Adapter.test_source_hash_detects_same_timestamp_change_and_deletion) ... ok
+test_tampered_result_is_stale (test_codex_adapter.Adapter.test_tampered_result_is_stale) ... ok
+test_task_requires_result_and_detects_stale_source (test_codex_adapter.Adapter.test_task_requires_result_and_detects_stale_source) ... ok
+test_topology_injection_remains_json_data (test_codex_adapter.Adapter.test_topology_injection_remains_json_data) ... ok
+test_topology_rejects_missing_endpoint (test_codex_adapter.Adapter.test_topology_rejects_missing_endpoint) ... ok
+test_renderer_does_not_claim_a_second_agent_without_evidence (test_codex_adapter.RuleRendererHonesty.test_renderer_does_not_claim_a_second_agent_without_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.396s
+
+OK

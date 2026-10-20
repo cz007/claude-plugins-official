@@ -1,0 +1,7 @@
+Code Modernization Codex
+Based on Anthropic Code Modernization 1.0.0, Apache-2.0.
+Upstream: https://github.com/anthropics/claude-plugins-official
+Commit: a0b04d9ddccaabe1976645f68b0eda50f74e7022
+Codex adaptation by cz007, 2026-10-20.
+Community adaptation; no endorsement by Anthropic or OpenAI is claimed.
+Third-party asset licenses remain in assets/vendor/.

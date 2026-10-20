@@ -1,0 +1,21 @@
+{
+  "name": "code-modernization-codex",
+  "version": "1.1.0",
+  "description": "Local legacy analysis, business rules, approved uplift/rewrite/rebuild, and evidence-based verification. Community adaptation of Anthropic Code Modernization.",
+  "author": {
+    "name": "cz007"
+  },
+  "repository": "https://github.com/cz007/claude-plugins-official",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Code Modernization Codex",
+    "shortDescription": "Analyze, modernize and verify",
+    "longDescription": "Local desktop workflow with source analysis, human plan gates, three modernization tracks and reusable proof scripts. No Claude workflow runtime, live pane or telemetry.",
+    "developerName": "cz007",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "composerIcon": "./assets/codex-icon.svg",
+    "logo": "./assets/codex-icon.svg"
+  }
+}

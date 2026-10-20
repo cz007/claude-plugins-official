@@ -1,0 +1,711 @@
+{
+  "classification": "Executable local fixture E2E; discovery contract authored by current Codex; not installed-plugin invocation, independent review or production acceptance",
+  "positive": {
+    "verdict": "PROVEN",
+    "testsExecuted": 6,
+    "developmentInputs": 6,
+    "freshInputs": 12,
+    "rules": 2,
+    "canaryExpectedFailure": true,
+    "sourceUntouched": true
+  },
+  "negative": [
+    "unapproved gate blocked",
+    "changed output NOT PROVEN",
+    "missing test run NOT PROVEN",
+    "zero cases nonzero exit",
+    "missing outputs nonzero exit"
+  ],
+  "commands": [
+    {
+      "name": "init",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "init",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文",
+        "--source",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source",
+        "--track",
+        "transform",
+        "--target",
+        "Python 3"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "shards",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\make_shards.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "rules",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\render_rules.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "topology",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "render-topology",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "task-start",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "task",
+        "pricing",
+        "start",
+        "rules",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文",
+        "--input",
+        "source"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "task-done",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "task",
+        "pricing",
+        "done",
+        "rules",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文",
+        "--result",
+        "analysis/pricing/BUSINESS_RULES.md"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "unapproved-gate",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "gate",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文",
+        "--plan",
+        "analysis/pricing/MODERNIZATION_BRIEF.md",
+        "--scope",
+        "Phase 1"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "unit",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\run_tests.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\results\\TEST-Pricing.xml"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "canary",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\canary\\run_tests.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\analysis\\pricing\\equivalence\\canary\\mod\\TEST-Canary.xml"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "dev0-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "0"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev0-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "0"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev1-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "10"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev1-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "10"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev2-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "11"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev2-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "11"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev3-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "-1"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev3-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "-1"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev4-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "true"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev4-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "true"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev5-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "\"3\""
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "dev5-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "\"3\""
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh0-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "21"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh0-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "21"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh1-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "22"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh1-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "22"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh2-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "23"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh2-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "23"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh3-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "24"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh3-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "24"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh4-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "25"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh4-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "25"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh5-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "26"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh5-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "26"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh6-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "27"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh6-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "27"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh7-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "28"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh7-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "28"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh8-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "29"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh8-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "29"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh9-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "30"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh9-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "30"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh10-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "31"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh10-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "31"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh11-legacy",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\旧系统 source\\pricing.py",
+        "32"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "fresh11-new",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\pricing.py",
+        "32"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "compare-dev",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\compare.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\analysis\\pricing\\equivalence\\mod\\cases.json",
+        "--out",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\analysis\\pricing\\EQUIVALENCE.json"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "compare-fresh",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\compare.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\analysis\\pricing\\equivalence\\mod\\fresh-cases.json",
+        "--out",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\analysis\\pricing\\equivalence\\mod\\FRESH_EQUIVALENCE.json"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "trace",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\trace_rules.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文",
+        "--module",
+        "mod",
+        "--results",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文\\modernized\\pricing\\mod\\results"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "proof",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\proof_pack.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "report",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\build_report.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "negative-difference",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\proof_pack.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\negative workspace"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "negative-report",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\build_report.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\negative workspace"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "negative-missing-run",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\proof_pack.py",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\negative workspace"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "negative-empty",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\compare.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\empty\\cases.json"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "negative-missing-output",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\compare.py",
+        "[WORKSPACE]\\evidence\\e2e-final\\missing\\cases.json"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "name": "checkpoint",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "checkpoint",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "name": "status",
+      "argv": [
+        "[USER_PROFILE]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "[WORKSPACE]\\repo\\plugins\\code-modernization-codex\\scripts\\codex_runner.py",
+        "status",
+        "pricing",
+        "--workspace",
+        "[WORKSPACE]\\evidence\\e2e-final\\workspace 中文"
+      ],
+      "exit": 0,
+      "expected": 0
+    }
+  ]
+}

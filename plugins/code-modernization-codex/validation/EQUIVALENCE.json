@@ -1,0 +1,158 @@
+{
+  "system": "pricing",
+  "generated": "2026-10-20T01:41:20Z",
+  "legacy": {
+    "label": "original",
+    "command": "Python pricing.py JSON"
+  },
+  "new": {
+    "label": "rewritten",
+    "command": "Python pricing.py JSON"
+  },
+  "selfCheck": {
+    "passed": true,
+    "detail": "each legacy output was compared with a copy changed by one byte and reported as different"
+  },
+  "totals": {
+    "cases": 6,
+    "executed": 6,
+    "same": 6,
+    "differs": 0,
+    "differsApproved": 0,
+    "missing": 0
+  },
+  "cases": [
+    {
+      "id": "dev0",
+      "title": "0",
+      "verdict": "same",
+      "reason": "Identical, 29 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev0.out",
+      "newPath": "equivalence/mod/dev/new/dev0.out",
+      "legacySha256": "8d57f16bbec673b51a83080ec4b6a971d52dc69276d1a4234756707b3fd84e83",
+      "newSha256": "8d57f16bbec673b51a83080ec4b6a971d52dc69276d1a4234756707b3fd84e83",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 29,
+        "new": 29
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    },
+    {
+      "id": "dev1",
+      "title": "10",
+      "verdict": "same",
+      "reason": "Identical, 33 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev1.out",
+      "newPath": "equivalence/mod/dev/new/dev1.out",
+      "legacySha256": "4fcffe848f66b37f1841a17814e96c436e6d524ec030c1947d3f1dcb9c336a31",
+      "newSha256": "4fcffe848f66b37f1841a17814e96c436e6d524ec030c1947d3f1dcb9c336a31",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 33,
+        "new": 33
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    },
+    {
+      "id": "dev2",
+      "title": "11",
+      "verdict": "same",
+      "reason": "Identical, 32 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev2.out",
+      "newPath": "equivalence/mod/dev/new/dev2.out",
+      "legacySha256": "7c8bfa3a29d26a1cd0f4f0bb891499aca47a3a2617fe5da534ae1ad0ab49a889",
+      "newSha256": "7c8bfa3a29d26a1cd0f4f0bb891499aca47a3a2617fe5da534ae1ad0ab49a889",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 32,
+        "new": 32
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    },
+    {
+      "id": "dev3",
+      "title": "-1",
+      "verdict": "same",
+      "reason": "Identical, 31 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev3.out",
+      "newPath": "equivalence/mod/dev/new/dev3.out",
+      "legacySha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "newSha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 31,
+        "new": 31
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    },
+    {
+      "id": "dev4",
+      "title": "true",
+      "verdict": "same",
+      "reason": "Identical, 31 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev4.out",
+      "newPath": "equivalence/mod/dev/new/dev4.out",
+      "legacySha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "newSha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 31,
+        "new": 31
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    },
+    {
+      "id": "dev5",
+      "title": "\"3\"",
+      "verdict": "same",
+      "reason": "Identical, 31 bytes.",
+      "legacyPath": "equivalence/mod/dev/legacy/dev5.out",
+      "newPath": "equivalence/mod/dev/new/dev5.out",
+      "legacySha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "newSha256": "baef84fd2a2f224b2c955c7537a5fbcb7b22590e598e3bb565026e5f17ade028",
+      "masked": [],
+      "approvedDifference": "",
+      "note": "",
+      "bytes": {
+        "legacy": 31,
+        "new": 31
+      },
+      "maskedBytes": {
+        "legacy": 0,
+        "new": 0
+      },
+      "empty": false
+    }
+  ]
+}

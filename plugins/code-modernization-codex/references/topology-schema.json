@@ -1,0 +1,47 @@
+{
+  "system": "name",
+  "root": {
+    "id": "sys",
+    "name": "name",
+    "kind": "system",
+    "children": [
+      {
+        "id": "domain:billing",
+        "name": "Billing",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "mod",
+            "name": "Module",
+            "kind": "module",
+            "language": "python",
+            "loc": 20,
+            "file": "app.py",
+            "description": "Code-backed explanation"
+          }
+        ]
+      }
+    ]
+  },
+  "edges": [],
+  "entryPoints": [
+    "mod"
+  ],
+  "deadEnds": [],
+  "observations": [],
+  "flows": [
+    {
+      "name": "Compute",
+      "persona": "User",
+      "description": "Business purpose",
+      "steps": [
+        {
+          "label": "Calculate",
+          "nodes": [
+            "mod"
+          ]
+        }
+      ]
+    }
+  ]
+}
